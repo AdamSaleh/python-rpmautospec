@@ -18,7 +18,7 @@ A package and CLI tool to generate RPM release fields and changelogs.}
 
 %package -n python3-%{srcname}
 Summary:        %{summary}
-BuildRequires:  python3-devel
+BuildRequires:  python3-devel >= 3.6.0
 BuildRequires:      python%{python3_pkgversion}-pytest
 %{?python_provide:%python_provide python3-%{srcname}}
 
@@ -44,8 +44,9 @@ install -m 0644 koji_plugin/rpmautospec_plugin.py %{buildroot}%{_prefix}/lib/koj
 
 %package -n python3-%{srcname}-koji-plugin
 Summary: Koji plugin for generating RPM releases and changelogs
-Requires: python3-%{srcname} == %{version}-%{release}
-Requires: koji
+Requires: python3-%{srcname} = %{version}-%{release}
+Requires: koji-builder-plugins
+Requires: python3-koji
 
 %description -n python3-%{srcname}-koji-plugin 
 A Koji plugin for generating RPM releases and changelogs.
