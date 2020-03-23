@@ -3,7 +3,7 @@
 Name:           python-rpmautospec
 Version:        0.0.1
 Release:        1%{?dist}
-Summary:        Provides a cli tool and a library for autorel and autochangelog
+Summary:        Package and CLI tool to generate release fields and changelogs
 
 License:        MIT
 URL:            https://pagure.io/Fedora-Infra/rpmautospec
@@ -12,8 +12,7 @@ Source0:        rpmautospec-0.0.1.tar.gz
 BuildArch:      noarch
 
 %global _description %{expand:
-Provides a cli tool and koji plugin for autorel and autochangelog
-}
+A package and CLI tool to generate RPM release fields and changelogs.}
 
 %description %_description
 
@@ -44,12 +43,12 @@ install -m 0644 koji_plugin/rpmautospec_plugin.py %{buildroot}%{_libdir}/koji-hu
 %{__python3} -m pytest
 
 %package -n python3-%{srcname}-koji-plugin
-Summary: Provides the koji plugin for autorel and autochangelog
+Summary: Koji plugin for generating RPM releases and changelogs
 Requires: python3-%{srcname} == %{version}-%{release}
 Requires: koji
 
 %description -n python3-%{srcname}-koji-plugin 
-Provides the koji plugin for autorel and autochangelog
+A Koji plugin for generating RPM releases and changelogs.
 
 # Note that there is no %%files section for the unversioned python module
 %files -n python3-%{srcname}
