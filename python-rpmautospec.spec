@@ -20,6 +20,7 @@ Provides a cli tool and koji plugin for autorel and autochangelog
 %package -n python3-%{srcname}
 Summary:        %{summary}
 BuildRequires:  python3-devel
+BuildRequires:      python%{python3_pkgversion}-pytest
 %{?python_provide:%python_provide python3-%{srcname}}
 
 Requires: python3-rpm
@@ -38,6 +39,9 @@ Requires: python3-pygit2
 %py3_install
 mkdir -p  %{buildroot}%{_libdir}/koji-hub-plugins/
 install -m 0644 koji_plugin/rpmautospec_plugin.py %{buildroot}%{_libdir}/koji-hub-plugins/
+
+%check
+%{__python3} -m pytest
 
 %package -n python3-%{srcname}-koji-plugin
 Summary: Provides the koji plugin for autorel and autochangelog
