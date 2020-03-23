@@ -19,7 +19,7 @@ A package and CLI tool to generate RPM release fields and changelogs.}
 %package -n python3-%{srcname}
 Summary:        %{summary}
 BuildRequires:  python3-devel >= 3.6.0
-BuildRequires:      python%{python3_pkgversion}-pytest
+BuildRequires:  python%{python3_pkgversion}-pytest
 %{?python_provide:%python_provide python3-%{srcname}}
 
 Requires: python3-rpm
