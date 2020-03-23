@@ -7,7 +7,7 @@ Summary:        Package and CLI tool to generate release fields and changelogs
 
 License:        CC0
 URL:            https://pagure.io/Fedora-Infra/rpmautospec
-Source0:        rpmautospec-0.0.1.tar.gz
+Source0:        https://releases.pagure.org/Fedora-Infra/rpmautospec/rpmautospec-%{version}.tar.gz
 
 BuildArch:      noarch
 
