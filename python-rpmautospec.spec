@@ -36,8 +36,8 @@ Requires: python3-pygit2
 
 %install
 %py3_install
-mkdir -p  %{buildroot}%{_libdir}/koji-hub-plugins/
-install -m 0644 koji_plugin/rpmautospec_plugin.py %{buildroot}%{_libdir}/koji-hub-plugins/
+mkdir -p  %{buildroot}%{_prefix}/lib/koji-builder-plugins/
+install -m 0644 koji_plugin/rpmautospec_plugin.py %{buildroot}%{_prefix}/lib/koji-builder-plugins/
 
 %check
 %{__python3} -m pytest
@@ -59,7 +59,7 @@ A Koji plugin for generating RPM releases and changelogs.
 %{_bindir}/rpmautospec
 
 %files -n python3-%{srcname}-koji-plugin
-%{_libdir}/koji-hub-plugins/rpmautospec_plugin.py
+%{_prefix}/lib/koji-builder-plugins/rpmautospec_plugin.py
 
 %changelog
 * Wed Mar 18 2020  Adam Saleh <asaleh@redhat.com> - 0.0.1-1
